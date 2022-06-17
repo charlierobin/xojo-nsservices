@@ -4,6 +4,19 @@
 				End
 			End
 			Begin BuildStepList Mac OS X
+				Begin IDEScriptBuildStep ScriptUpdateVersion , AppliesTo = 0, Architecture = 0
+					var v as String = ""
+					
+					v = PropertyValue( "App.MajorVersion" ) + "." + PropertyValue( "App.MinorVersion" ) + "." + PropertyValue( "App.BugVersion" ) + "."
+					
+					v = v + PropertyValue( "App.StageCode" ) + "."
+					
+					v = v + PropertyValue( "App.NonReleaseVersion" )
+					
+					PropertyValue( "App.Version" ) = v
+					
+					
+				End
 				Begin BuildProjectStep Build
 				End
 				Begin CopyFilesBuildStep CopyDylibToFrameworkFolder
@@ -16,7 +29,7 @@
 				Begin IDEScriptBuildStep ScriptInstallExtrasIntoPlist , AppliesTo = 0, Architecture = 0
 					var path as String = CurrentBuildLocation + "/" + CurrentBuildAppName + ".app" + "/Contents/Info.plist"
 					
-					var result as String = DoShellCommand( "sed -i.bak ""/MacOSX<\/string><\/array>/ r $PROJECT_PATH/NSServices.plist"" " + path )
+					var result as String = DoShellCommand( "sed -i '' -e ""/MacOSX<\/string><\/array>/ r $PROJECT_PATH/NSServices.plist"" " + path )
 					
 					if result <> "" then print( result )
 					
@@ -61,19 +74,6 @@
 					var result as String = DoShellCommand( "xattr -w com.dropbox.ignored 1 ""$PROJECT_PATH/../.git""" )
 					
 					if result <> "" then print( result )
-					
-					
-				End
-				Begin IDEScriptBuildStep ScriptUpdateVersion , AppliesTo = 0, Architecture = 0
-					var v as String = ""
-					
-					v = PropertyValue( "App.MajorVersion" ) + "." + PropertyValue( "App.MinorVersion" ) + "." + PropertyValue( "App.BugVersion" ) + "."
-					
-					v = v + PropertyValue( "App.StageCode" ) + "."
-					
-					v = v + PropertyValue( "App.NonReleaseVersion" )
-					
-					PropertyValue( "App.Version" ) = v
 					
 					
 				End
