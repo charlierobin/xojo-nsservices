@@ -29,11 +29,19 @@
 				Begin IDEScriptBuildStep ScriptInstallExtrasIntoPlist , AppliesTo = 0, Architecture = 0
 					var path as String = CurrentBuildLocation + "/" + CurrentBuildAppName + ".app" + "/Contents/Info.plist"
 					
-					var result as String = DoShellCommand( "sed -i '' -e ""/MacOSX<\/string><\/array>/ r $PROJECT_PATH/NSServices.plist"" " + path )
+					
+					// using sed ...
+					
+					// var result as String = DoShellCommand( "sed -i '' -e ""/MacOSX<\/string><\/array>/ r $PROJECT_PATH/NSServices-for-plist.txt"" " + path )
+					
+					// if result <> "" then print( result )
+					
+					
+					// using plistbuddy ...
+					
+					var result as String = DoShellCommand( "/usr/libexec/PlistBuddy -x -c ""Merge $PROJECT_PATH/NSServices-keys.plist"" " + path )
 					
 					if result <> "" then print( result )
-					
-					
 					
 				End
 				Begin IDEScriptBuildStep ScriptDropBoxIgnoreDebug , AppliesTo = 1, Architecture = 0

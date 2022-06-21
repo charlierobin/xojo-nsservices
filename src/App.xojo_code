@@ -14,7 +14,17 @@ Inherits Application
 
 
 	#tag Method, Flags = &h0
-		Shared Function callback(s as CFStringRef, NSUserData as CFStringRef) As CFStringRef
+		Shared Function callback(s as CFStringRef, NSUserData as CFStringRef, error as CFStringRef) As CFStringRef
+		  if error <> "" then
+		    
+		    MessageBox( error )
+		    
+		    return ""
+		    
+		  end if
+		  
+		  // MessageBox( s )
+		  
 		  // MessageBox( NSUserData )
 		  
 		  select case NSUserData
@@ -23,10 +33,13 @@ Inherits Application
 		    
 		    return "Hello from Xojo’s Method1"
 		    
-		    
 		  case "Method2"
 		    
-		    return "This is from Method2"
+		    return "This is from Xojo’s Method2"
+		    
+		  case "Method3"
+		    
+		    MessageBox( "file: " + s )
 		    
 		  else
 		    

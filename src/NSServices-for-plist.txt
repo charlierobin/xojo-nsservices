@@ -1,0 +1,68 @@
+<key>NSServices</key>
+<array>
+    <dict>
+        <key>NSMenuItem</key>
+        <dict>
+            <key>default</key>
+            <string>Xojo App’s Method1</string>
+        </dict>
+        <key>NSMessage</key>
+        <string>handlerMethodName</string>
+        <key>NSPortName</key>
+        <string>ServiceProviderTester</string>
+        <key>NSRequiredContext</key>
+        <dict/>
+        <key>NSReturnTypes</key>
+        <array>
+            <string>NSStringPboardType</string>
+        </array>
+        <key>NSSendTypes</key>
+        <array>
+            <string>NSStringPboardType</string>
+        </array>
+        <key>NSUserData</key>
+        <string>Method1</string>
+    </dict>
+    <dict>
+        <key>NSMenuItem</key>
+        <dict>
+            <key>default</key>
+            <string>Xojo App’s Method2</string>
+        </dict>
+        <key>NSMessage</key>
+        <string>handlerMethodName</string>
+        <key>NSPortName</key>
+        <string>ServiceProviderTester</string>
+        <key>NSRequiredContext</key>
+        <dict/>
+        <key>NSReturnTypes</key>
+        <array>
+            <string>NSStringPboardType</string>
+        </array>
+        <key>NSSendTypes</key>
+        <array>
+            <string>NSStringPboardType</string>
+        </array>
+        <key>NSUserData</key>
+        <string>Method2</string>
+    </dict>
+    <dict>
+        <key>NSMenuItem</key>
+        <dict>
+            <key>default</key>
+            <string>Xojo App’s Method3</string>
+        </dict>
+        <key>NSMessage</key>
+        <string>handlerMethodName2</string>
+        <key>NSPortName</key>
+        <string>ServiceProviderTester</string>
+        <key>NSRequiredContext</key>
+        <dict/>
+        <key>NSSendTypes</key>
+        <array>
+            <string>NSFilenamesPboardType</string>
+        </array>
+        <key>NSUserData</key>
+        <string>Method3</string>
+    </dict>
+</array>
