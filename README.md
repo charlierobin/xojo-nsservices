@@ -26,7 +26,7 @@ Selecting the menu item launches the Xojo app (if it’s not already running) an
 
 `Shared Function callback(s as CFStringRef, NSUserData as CFStringRef, error as CFStringRef) As CFStringRef`
 
-Note that (as with a lot – all? — of callbacks to Xojo) the callback handler has to be a shared method, **not** an instance one.
+Note that (as with a lot – all? – of callbacks to Xojo) the callback handler has to be a shared method, **not** an instance one.
 
 The third service menu item is only available when there is a suitable file selected in the Finder:
 
