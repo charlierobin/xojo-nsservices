@@ -33,3 +33,45 @@ The third service menu item is only available when there is a suitable file sele
 <img width="446" alt="Screenshot 2023-04-19 at 09 34 26" src="https://user-images.githubusercontent.com/10506323/233002500-6d355c3b-9d07-4cd8-b5ec-5ccb1464d929.png">
 
 In this case, the appropriate file details are passed to the Xojo handler.
+
+The complete handler looks like this:
+
+```
+Shared Function callback(s as CFStringRef, NSUserData as CFStringRef, error as CFStringRef) As CFStringRef
+
+    if error <> "" then
+		    
+        MessageBox( error )
+		    
+        return ""
+		    
+    end if
+		  
+    select case NSUserData
+		    
+    case "Method1"
+		    
+        return "Hello from Xojo’s Method1"
+		    
+    case "Method2"
+		    
+        return "This is from Xojo’s Method2"
+		    
+    case "Method3"
+		    
+        MessageBox( "file: " + s )
+		    
+    else
+		    
+        MessageBox( "Unrecognised NSUserData: " + NSUserData )
+		    
+    end select
+		  
+End Function
+```
+
+As well as the plumbing in the dylib, and the handling in the callback, you need to make sure that your app’s Info.plist file is updated so that macOS knows about the services your app wants to provide and what data they handle.
+
+So you’ll need to update this file with the correct information:
+
+https://github.com/charlierobin/xojo-nsservices/blob/main/src/NSServices-keys.plist
