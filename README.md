@@ -6,13 +6,13 @@ The Services menu usually lives just above the hide/show options in an app’s a
 
 It changes depending on what the user is doing, what they have selected etc.
 
-It also appears at the bottom of the contextual (right click) menu that appears when the user right clicks on text, a file in the Finder, and some other places:
+It also appears at the bottom of the contextual menu that appears when the user right clicks (or control clicks) on text, a file in the Finder – anywhere the contextual menu can be accessed:
 
 <img width="670" alt="Screenshot 2023-04-19 at 09 40 59" src="https://user-images.githubusercontent.com/10506323/233005390-869166b4-8f00-4a2f-963c-01993cb2f1a7.png">
 
 So an app that supports the Services menu (via NSServices) can be quite a useful little gizmo, publishing functionality that can then be shared even across different applications.
 
-(For instance, your app can be called from within another app, can transform text that has been highlighted, and then return it.)
+(For instance, your app can be called from within another app, can transform text that has been highlighted/selected, and then return it to replace the original text. Trivial examples would be a service for transforming case, sorting multiple lines, etc.)
 
 https://developer.apple.com/documentation/bundleresources/information_property_list/nsservices
 
