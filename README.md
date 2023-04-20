@@ -6,7 +6,7 @@ The Services menu usually lives just above the hide/show options in an app’s a
 
 It changes depending on what the user is doing, what they have selected etc.
 
-It also appears at the bottom of the contenxtual (right click) menu that appears when the user right clicks on text, a file in the Finder, and some other places:
+It also appears at the bottom of the contextual (right click) menu that appears when the user right clicks on text, a file in the Finder, and some other places:
 
 <img width="670" alt="Screenshot 2023-04-19 at 09 40 59" src="https://user-images.githubusercontent.com/10506323/233005390-869166b4-8f00-4a2f-963c-01993cb2f1a7.png">
 
